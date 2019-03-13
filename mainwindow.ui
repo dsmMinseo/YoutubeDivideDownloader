@@ -74,6 +74,12 @@
     <property name="text">
      <string/>
     </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/resources/icon/add.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QLabel" name="label_helpImg">
     <property name="geometry">
@@ -86,6 +92,12 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/resources/icon/help.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label_settingImg">
@@ -100,15 +112,34 @@
     <property name="text">
      <string/>
     </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/resources/icon/setting.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QListView" name="listView">
     <property name="geometry">
      <rect>
-      <x>-10</x>
+      <x>-3</x>
       <y>100</y>
       <width>611</width>
       <height>611</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QScrollBar" name="verticalScrollBar">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>100</y>
+      <width>21</width>
+      <height>611</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
     </property>
    </widget>
   </widget>
@@ -121,6 +152,21 @@
      <height>26</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>파일</string>
+    </property>
+    <addaction name="actionAdd_File"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>도구</string>
+    </property>
+    <addaction name="action"/>
+    <addaction name="action_2"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menu"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -131,8 +177,28 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionAdd_File">
+   <property name="text">
+    <string>링크 추가</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>속성</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>도움말</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <tabstops>
+  <tabstop>listView</tabstop>
+ </tabstops>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

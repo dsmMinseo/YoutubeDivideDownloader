@@ -32,16 +32,19 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    historylist.cpp
 
 HEADERS += \
         mainwindow.h \
     mainwindow.h \
     mainwindow.h \
-    mainwindow.h
+    mainwindow.h \
+    historylist.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    historylist.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
