@@ -33,18 +33,25 @@ SOURCES += \
     mainwindow.cpp \
     main.cpp \
     mainwindow.cpp \
-    historylist.cpp
+    selectwindow.cpp \
+    listwidget.cpp \
+    YoutubeDownloadLibrary/demo.cpp \
+    settingwindow.cpp
 
 HEADERS += \
         mainwindow.h \
     mainwindow.h \
     mainwindow.h \
     mainwindow.h \
-    historylist.h
+    selectwindow.h \
+    listwidget.h \
+    settingwindow.h
 
 FORMS += \
         mainwindow.ui \
-    historylist.ui
+    selectwindow.ui \
+    listwidget.ui \
+    settingwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -57,3 +64,14 @@ RESOURCES += \
 DISTFILES += \
     resources/add.png \
     add.png
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/YoutubeDownloadLibrary/release/ -lYouTubeDownloadLibrary
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/YoutubeDownloadLibrary/debug/ -lYouTubeDownloadLibrary
+
+INCLUDEPATH += $$PWD/YoutubeDownloadLibrary/debug
+DEPENDPATH += $$PWD/YoutubeDownloadLibrary/debug
+
+INCLUDEPATH += $$PWD/YoutubeDownloadLibrary
+LIBS += -L$$PWD/-llibeay32
+LIBS += -L$$PWD/-lssleay32
+LIBS += -L$$PWD/-lYouTubeDownloadLibrary
