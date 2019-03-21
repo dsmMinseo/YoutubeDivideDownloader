@@ -25,33 +25,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        main.cpp \
-        mainwindow.cpp \
-    main.cpp \
-    mainwindow.cpp \
-    main.cpp \
-    mainwindow.cpp \
     main.cpp \
     mainwindow.cpp \
     selectwindow.cpp \
     listwidget.cpp \
-    YoutubeDownloadLibrary/demo.cpp \
-    settingwindow.cpp
+    settingwindow.cpp \
+    audiodividewindow.cpp \
+
 
 HEADERS += \
-        mainwindow.h \
-    mainwindow.h \
-    mainwindow.h \
     mainwindow.h \
     selectwindow.h \
     listwidget.h \
-    settingwindow.h
+    settingwindow.h \
+    audiodividewindow.h \
 
 FORMS += \
         mainwindow.ui \
     selectwindow.ui \
     listwidget.ui \
-    settingwindow.ui
+    settingwindow.ui \
+    audiodividewindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -65,13 +59,19 @@ DISTFILES += \
     resources/add.png \
     add.png
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/YoutubeDownloadLibrary/release/ -lYouTubeDownloadLibrary
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/YoutubeDownloadLibrary/debug/ -lYouTubeDownloadLibrary
+#win32:CONFIG(release, debug|release): LIBS += -L$$PWD/YoutubeDownloadLibrary/release/ -lYouTubeDownloadLibrary
+#else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/YoutubeDownloadLibrary/debug/ -lYouTubeDownloadLibrary
 
-INCLUDEPATH += $$PWD/YoutubeDownloadLibrary/debug
-DEPENDPATH += $$PWD/YoutubeDownloadLibrary/debug
+#INCLUDEPATH += $$PWD/YoutubeDownloadLibrary/debug
+#DEPENDPATH += $$PWD/YoutubeDownloadLibrary/debug
 
-INCLUDEPATH += $$PWD/YoutubeDownloadLibrary
-LIBS += -L$$PWD/-llibeay32
-LIBS += -L$$PWD/-lssleay32
-LIBS += -L$$PWD/-lYouTubeDownloadLibrary
+#INCLUDEPATH += $$PWD/YoutubeDownloadLibrary
+#LIBS += -L$$PWD/-llibeay32
+#LIBS += -L$$PWD/-lssleay32
+#LIBS += -L$$PWD/-lYouTubeDownloadLibrary
+
+##INCLUDEPATH += C:/Program Files/OpenSSL-Win64/include
+##LIBS += -LC:/Program Files/OpenSSL-Win64/lib/ -llibcrypto
+##LIBS += -LC:/Program Files/OpenSSL-Win64/lib/ -llibssl
+
+#export OPENSSL_LIBS='-L/opt/ssl/lib -lssl -lcrypto' ./configure -openssl-linked
